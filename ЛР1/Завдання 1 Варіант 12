@@ -1,0 +1,39 @@
+import java.util.Scanner;
+import java.lang.Math; 
+
+public class TriangleCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введіть довжину першого катета (a):");
+        if (!scanner.hasNextDouble()) {
+            System.out.println("Помилка: Введено некоректне значення для катета a.");
+            scanner.close();
+            return;
+        }
+        double sideA = scanner.nextDouble();
+
+        System.out.println("Введіть довжину другого катета (b):");
+        if (!scanner.hasNextDouble()) {
+            System.out.println("Помилка: Введено некоректне значення для катета b.");
+            scanner.close();
+            return;
+        }
+        double sideB = scanner.nextDouble();
+
+        scanner.close();
+
+        if (sideA <= 0 || sideB <= 0) {
+            System.out.println("Помилка: Довжини катетів мають бути додатними числами.");
+            return;
+        }
+
+        
+        double hypotenuse = Math.sqrt(sideA * sideA + sideB * sideB);
+
+        double area = (sideA * sideB) / 2.0;
+        System.out.println("\nРезультати обчиcлень:");
+        System.out.printf("Гіпотенуза (c): %.2f%n", hypotenuse);
+        System.out.printf("Площа трикутника (S): %.2f%n", area);
+    }
+}
