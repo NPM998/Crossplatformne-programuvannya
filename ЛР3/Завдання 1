@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class MaxOctalDigits {
+
+    public static void main(String[] args) {
+        int[] numbers = {10, 50, 15, 100, 7, 64};
+
+        int maxNumber = findNumberWithMostOctalDigits(numbers);
+
+        System.out.println("Исходный список чисел: ");
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+        System.out.println("\n---");
+        System.out.println("Число с наибольшим количеством разрядов в 8-й системе счисления: **" + maxNumber + "**");
+        
+        System.out.println("(В восьмеричной системе: " + **Integer.toOctalString(maxNumber) + "**)");
+    }
+
+
+    public static int findNumberWithMostOctalDigits(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException("Массив чисел не может быть пустым.");
+        }
+
+        int maxVal = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > maxVal) {
+                maxVal = arr[i];
+            }
+        }
+
+        return maxVal;
+    }
+}
