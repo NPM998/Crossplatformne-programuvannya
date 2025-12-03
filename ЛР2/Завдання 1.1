@@ -8,10 +8,9 @@ public class LeapYearChecker {
         if (scanner.hasNextInt()) {
             int year = scanner.nextInt();
 
-            // Перевірка діапазону років
+
             if (year >= 1900 && year <= 3000) {
-                // Логіка визначення високосного року
-                // (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
+
                 boolean isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 
                 if (isLeap) {
