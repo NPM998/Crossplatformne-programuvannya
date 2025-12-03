@@ -12,7 +12,6 @@ public class ExpressionCalculator {
 
         double y = b * (tanX * tanX) - a / (sinXa * sinXa);
 
-        // d = a * e^(-sqrt(a)) * cos(b*x/a)
         // e^(...) -> Math.exp(...), sqrt(a) -> Math.sqrt(a), cos(...) -> Math.cos(...)
         double sqrtA = Math.sqrt(a);
         double expTerm = Math.exp(-sqrtA);
