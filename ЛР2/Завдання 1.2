@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class IntervalChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введіть ціле число: ");
+
+        if (scanner.hasNextInt()) {
+            int number = scanner.nextInt();
+
+            boolean isInInterval = (number <= 15) || (number >= 19);
+
+            if (isInInterval) {
+                System.out.println("**True**");
+            } else {
+                System.out.println("**False**");
+            }
+        } else {
+            System.out.println("Невірний ввід. Будь ласка, введіть ціле число.");
+        }
+        scanner.close();
+    }
+}
