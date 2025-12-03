@@ -1,0 +1,57 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+public class MatrixNorm {
+
+    public static void fillMatrixWithRandoms(double[][] matrix, int n) {
+        double min = -n;
+        double max = n;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                matrix[i][j] = min + Math.random() * (max - min);
+            }
+        }
+    }
+
+    public static double calculateFrobeniusNorm(double[][] matrix, int n) {
+        double sumOfSquares = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                sumOfSquares += matrix[i][j] * matrix[i][j];
+            }
+        }
+        return Math.sqrt(sumOfSquares);
+    }
+
+    public static void printMatrix(double[][] matrix, int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.printf("%.4f\t", matrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введіть розмірність матриці n: ");
+        int n = scanner.nextInt();
+
+        if (n <= 0) {
+            System.out.println("Розмірність матриці повинна бути додатним цілим числом.");
+            scanner.close();
+            return;
+        }
+
+        double[][] matrix = new double[n][n];
+
+        fillMatrixWithRandoms(matrix, n);
+        System.out.println("\nЗгенерована матриця a[" + n + "][" + n + "]:");
+        printMatrix(matrix, n);
+
+        double norm = calculateFrobeniusNorm(matrix, n);
+        System.out.println("\nНорма матриці (норма Фробеніуса): " + norm);
+
+        scanner.close();
+    }
+}
