@@ -1,0 +1,21 @@
+import java.util.Random;
+
+public class RandomNumberSum {
+    public static void main(String[] args) {
+        Random random = new Random();
+        int number = random.nextInt(900) + 100;
+
+        System.out.println("Згенероване число: " + number);
+
+        int sum = 0;
+        int tempNumber = number; // Використовуємо тимчасову змінну, щоб не змінювати оригінал
+
+        while (tempNumber > 0) {
+            int digit = tempNumber % 10;
+            sum += digit;
+            tempNumber /= 10;
+        }
+
+        System.out.println("Сума цифр: " + **sum**);
+    }
+}
