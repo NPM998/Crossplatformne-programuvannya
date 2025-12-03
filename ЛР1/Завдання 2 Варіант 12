@@ -1,11 +1,9 @@
 public class ExpressionCalculator {
     public static void main(String[] args) {
-        // Задані значення параметрів
         double a = 3.2;
         double b = 17.5;
         double x = -4.8;
 
-        // Обчислення значення y
         // y = b * tg^2(x) - a / sin^2(x/a)
         // tg(x) -> Math.tan(x), sin(x/a) -> Math.sin(x/a)
         // ^2 -> Math.pow(..., 2) або просто множення
@@ -14,7 +12,6 @@ public class ExpressionCalculator {
 
         double y = b * (tanX * tanX) - a / (sinXa * sinXa);
 
-        // Обчислення значення d
         // d = a * e^(-sqrt(a)) * cos(b*x/a)
         // e^(...) -> Math.exp(...), sqrt(a) -> Math.sqrt(a), cos(...) -> Math.cos(...)
         double sqrtA = Math.sqrt(a);
@@ -23,7 +20,6 @@ public class ExpressionCalculator {
 
         double d = a * expTerm * cosTerm;
 
-        // Виведення результатів
         System.out.println("a = " + a);
         System.out.println("b = " + b);
         System.out.println("x = " + x);
